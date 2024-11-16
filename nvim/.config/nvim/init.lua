@@ -94,11 +94,12 @@ vim.g.maplocalleader = ' '
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
-
 -- Set to true if you have a Nerd Font installed and selected in the terminal
 vim.g.have_nerd_font = true
 
 vim.opt.termguicolors = true
+
+--vim.highlight.create('Comment', { cterm = 'italic', gui = 'italic' }, false)
 
 -- [[ Setting options ]]
 require 'options'
@@ -111,6 +112,8 @@ require 'lazy-bootstrap'
 
 -- [[ Configure and install plugins ]]
 require 'lazy-plugins'
+
+vim.cmd [[colorscheme tokyonight-night]]
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
