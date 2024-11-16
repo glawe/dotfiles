@@ -36,7 +36,7 @@ vim.keymap.set('n', '<A-right>', '<C-w><C-l>', { desc = 'Move focus to the right
 vim.keymap.set('n', '<A-down>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<A-up>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
-vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>', { noremap = true })
+vim.keymap.set('n', '<leader>e', ':Neotree toggle<CR>', { noremap = true })
 vim.keymap.set('n', '<leader>tt', ':ToggleTerm<CR>', { noremap = true })
 
 vim.keymap.set('n', '<leader>wv', ':vsplit<CR>', { desc = 'Vertical split', noremap = true })
