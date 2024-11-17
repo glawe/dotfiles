@@ -12,6 +12,7 @@
 -- Then, because we use the `config` key, the configuration only runs
 -- after the plugin has been loaded:
 --  config = function() ... end
+--
 
 return {
   { -- Useful plugin to show you pending keybinds.
@@ -54,19 +55,20 @@ return {
           F12 = '<F12>',
         },
       },
-
       -- Document existing key chains
       spec = {
-        { '<leader>e', group = 'Toggle Explorer', remap = true },
-        { '<leader>c', group = '[C]Code', mode = { 'n', 'x' } },
-        { '<leader>d', group = '[D]Debug' },
-        { '<leader>r', group = '[R]Rename' },
-        { '<leader>s', group = '[S]Search' },
-        { '<leader>w', group = '[W]Window' },
-        { '<leader>t', group = '[T]Terminal' },
-        { '<leader>g', group = '[G]Git', mode = { 'n', 'v' } },
-        { '<leader>x', group = '[X]Trouble' },
-        { '<leader>f', group = '[F]Flutter' },
+        { '<leader>e', group = 'Files', remap = true, icon = '' },
+        { '<leader>c', group = 'Code', mode = { 'n', 'x' } },
+        { '<leader>d', group = 'Debug' },
+        { '<leader> ', group = 'Open Buffers', icon = '' },
+        { '<leader>/', group = 'Search Buffer', icon = '󰱽' },
+        { '<leader>r', group = 'Rename' },
+        { '<leader>s', group = 'Search', icon = '' },
+        { '<leader>w', group = 'Window' },
+        { '<leader>t', group = 'Terminal' },
+        { '<leader>g', group = 'Git', mode = { 'n', 'v' } },
+        { '<leader>x', group = 'Trouble', icon = '' },
+        { '<leader>f', group = 'Flutter', icon = '' },
       },
     },
   },
