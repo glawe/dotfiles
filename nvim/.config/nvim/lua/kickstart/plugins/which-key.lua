@@ -59,7 +59,7 @@ return {
       spec = {
         { '<leader>e', group = 'Toggle Explorer', remap = true },
         { '<leader>c', group = '[C]Code', mode = { 'n', 'x' } },
-        { '<leader>d', group = '[D]Document' },
+        { '<leader>d', group = '[D]Debug' },
         { '<leader>r', group = '[R]Rename' },
         { '<leader>s', group = '[S]Search' },
         { '<leader>w', group = '[W]Window' },

@@ -1,6 +1,3 @@
--- [[ Basic Keymaps ]]
---  See `:help vim.keymap.set()`
-
 -- Clear highlights on search when pressing <Esc> in normal mode
 --  See `:help hlsearch`
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
@@ -52,6 +49,17 @@ vim.keymap.set('n', '<leader>fD', ':FlutterDevTools<CR>', { desc = 'Devtools', n
 vim.keymap.set('n', '<leader>fo', ':FlutterOutlineToggle<CR>', { desc = 'Outline Toggle', noremap = true })
 
 vim.keymap.set('n', 'gb', '<c-t>', { desc = 'Navigate back', noremap = true })
+
+vim.keymap.set('n', '<leader>db', ':DapToggleBreakpoint<CR>', { desc = 'Toggle Breakpoint', noremap = true })
+vim.keymap.set('n', '<leader>dc', ':DapContinue<CR>', { desc = 'Continue', noremap = true })
+vim.keymap.set('n', '<leader>dd', ':DapDisconnect<CR>', { desc = 'Disconnect', noremap = true })
+vim.keymap.set('n', '<leader>de', ':DapEval<CR>', { desc = 'Eval', noremap = true })
+vim.keymap.set('n', '<leader>dn', ':DapNew<CR>', { desc = 'New', noremap = true })
+vim.keymap.set('n', '<leader>dr', ':DapRestartFrame<CR>', { desc = 'Restart Frame', noremap = true })
+vim.keymap.set('n', '<leader>di', ':DapStepInto<CR>', { desc = 'Step Info', noremap = true })
+vim.keymap.set('n', '<leader>do', ':DapStepOver<CR>', { desc = 'Step Over', noremap = true })
+vim.keymap.set('n', '<leader>dO', ':DapStepOut<CR>', { desc = 'Step Out', noremap = true })
+vim.keymap.set('n', '<leader>dT', ':DapTerminate<CR>', { desc = 'Terminate', noremap = true })
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
