@@ -1,3 +1,4 @@
+-- https://medium.com/@lllttt06/flutter-development-with-neovim-7e45669aac53
 return {
   'nvim-flutter/flutter-tools.nvim',
   lazy = false,
@@ -8,7 +9,14 @@ return {
   -- config = true,
   config = function()
     require('flutter-tools').setup {
-
+      debugger = {
+        enabled = false,
+        run_via_dap = true,
+        register_configurations = function(_)
+          require('dap').configurations.dart = {}
+          require('dap.ext.vscode').load_launchjs()
+        end,
+      },
       settings = {
         showTodos = true,
         completeFunctionCalls = true,
