@@ -60,8 +60,10 @@ return {
         { '<leader>e', group = 'Files', remap = true, icon = '' },
         { '<leader>c', group = 'Code', mode = { 'n', 'x' } },
         { '<leader>d', group = 'Debug' },
-        { '<leader> ', group = 'Open Buffers', icon = '' },
-        { '<leader>/', group = 'Search Buffer', icon = '󰱽' },
+
+        { '<leader>b', group = 'Buffer', icon = '' },
+        { '<leader>bo', group = 'Open Buffers', icon = '' },
+        { '<leader>b/', group = 'Search Buffer', icon = '󰱽' },
         { '<leader>r', group = 'Rename' },
         { '<leader>s', group = 'Search', icon = '' },
         { '<leader>w', group = 'Window' },

@@ -51,6 +51,8 @@ vim.keymap.set('n', '<leader>do', ':DapStepOver<CR>', { desc = 'Step Over', nore
 vim.keymap.set('n', '<leader>dO', ':DapStepOut<CR>', { desc = 'Step Out', noremap = true })
 vim.keymap.set('n', '<leader>dT', ':DapTerminate<CR>', { desc = 'Terminate', noremap = true })
 
+vim.keymap.set('n', '<leader>bd', function() Snacks.bufdelete() end, { desc = 'Delete buffer', noremap = true })
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
