@@ -65,6 +65,5 @@ vim.opt.scrolloff = 10
 vim.o.sm = true
 
 vim.o.wbr = '%=%m 󰈙 %f'
---set winbar= '%=%m\ 󰈙 %f'
 
 -- vim: ts=2 sts=2 sw=2 et

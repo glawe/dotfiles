@@ -30,13 +30,13 @@ vim.keymap.set('n', '<leader>wv', ':vsplit<CR>', { desc = 'Vertical split', nore
 vim.keymap.set('n', '<leader>wh', ':split<CR>', { desc = 'Horizontal split', noremap = true })
 vim.keymap.set('n', '<leader>wc', ':bd<CR>', { desc = 'Close', noremap = true })
 
-vim.keymap.set('n', '<leader>fr', ':FlutterRun<CR>', { desc = 'Run', noremap = true })
-vim.keymap.set('n', '<leader>fd', ':FlutterDevices<CR>', { desc = 'Devices', noremap = true })
-vim.keymap.set('n', '<leader>fe', ':FlutterEmulators<CR>', { desc = 'Emulators', noremap = true })
-vim.keymap.set('n', '<leader>fR', ':FlutterRestart<CR>', { desc = 'Restart', noremap = true })
-vim.keymap.set('n', '<leader>fq', ':FlutterQuit<CR>', { desc = 'Quit', noremap = true })
-vim.keymap.set('n', '<leader>fD', ':FlutterDevTools<CR>', { desc = 'Devtools', noremap = true })
-vim.keymap.set('n', '<leader>fo', ':FlutterOutlineToggle<CR>', { desc = 'Outline Toggle', noremap = true })
+-- vim.keymap.set('n', '<leader>fr', ':FlutterRun<CR>', { desc = 'Run', noremap = true })
+-- vim.keymap.set('n', '<leader>fd', ':FlutterDevices<CR>', { desc = 'Devices', noremap = true })
+-- vim.keymap.set('n', '<leader>fe', ':FlutterEmulators<CR>', { desc = 'Emulators', noremap = true })
+-- vim.keymap.set('n', '<leader>fR', ':FlutterRestart<CR>', { desc = 'Restart', noremap = true })
+-- vim.keymap.set('n', '<leader>fq', ':FlutterQuit<CR>', { desc = 'Quit', noremap = true })
+-- vim.keymap.set('n', '<leader>fD', ':FlutterDevTools<CR>', { desc = 'Devtools', noremap = true })
+-- vim.keymap.set('n', '<leader>fo', ':FlutterOutlineToggle<CR>', { desc = 'Outline Toggle', noremap = true })
 
 vim.keymap.set('n', 'gb', '<c-t>', { desc = 'Navigate back', noremap = true })
 
@@ -51,7 +51,9 @@ vim.keymap.set('n', '<leader>do', ':DapStepOver<CR>', { desc = 'Step Over', nore
 vim.keymap.set('n', '<leader>dO', ':DapStepOut<CR>', { desc = 'Step Out', noremap = true })
 vim.keymap.set('n', '<leader>dT', ':DapTerminate<CR>', { desc = 'Terminate', noremap = true })
 
-vim.keymap.set('n', '<leader>bd', function() Snacks.bufdelete() end, { desc = 'Delete buffer', noremap = true })
+vim.keymap.set('n', '<leader>bd', function()
+  Snacks.bufdelete()
+end, { desc = 'Delete buffer', noremap = true })
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
