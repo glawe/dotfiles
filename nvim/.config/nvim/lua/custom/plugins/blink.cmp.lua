@@ -10,7 +10,6 @@ return {
   -- build = 'cargo build --release',
   -- If you use nix, you can build from source using latest nightly rust with:
   -- build = 'nix run .#build-plugin',
-
   ---@module 'blink.cmp'
   ---@type blink.cmp.Config
   opts = {
@@ -32,15 +31,13 @@ return {
     -- set to 'mono' for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
     -- adjusts spacing to ensure icons are aligned
     nerd_font_variant = 'mono',
-
     windows = {
       autocomplete = {
-        draw = 'reversed',
+        --draw = 'reversed',
         winblend = vim.o.pumblend,
-        -- draw = {
-        --
-        --   columns = { { 'label', 'label_description', gap = 1 }, { 'kind_icon', 'kind' } },
-        -- },
+        draw = {
+          columns = { { 'label', 'label_description', gap = 1 }, { 'kind_icon', 'kind', gap = 1 } },
+        },
       },
       documentation = {
         auto_show = true,
@@ -49,12 +46,11 @@ return {
         enabled = vim.g.ai_cmp,
       },
     },
-
     -- default list of enabled providers defined so that you can extend it
     -- elsewhere in your config, without redefining it, via `opts_extend`
     sources = {
       completion = {
-        enabled_providers = { 'lsp', 'path', 'snippets', 'buffer', 'codeium' },
+        enabled_providers = { 'lsp', 'path', 'snippets', 'buffer' },
       },
     },
 
