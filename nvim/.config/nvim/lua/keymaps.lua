@@ -51,6 +51,18 @@ vim.keymap.set('n', '<leader>do', ':DapStepOver<CR>', { desc = 'Step Over', nore
 vim.keymap.set('n', '<leader>dO', ':DapStepOut<CR>', { desc = 'Step Out', noremap = true })
 vim.keymap.set('n', '<leader>dT', ':DapTerminate<CR>', { desc = 'Terminate', noremap = true })
 
+vim.keymap.set('n', '<leader>-f', function()
+  require('fzf-lua').files()
+end, { desc = 'FZF files' })
+
+vim.keymap.set('n', '<leader>-b', function()
+  require('fzf-lua').buffers()
+end, { desc = 'FZF Open buffers' })
+
+vim.keymap.set('n', '<leader>-g', function()
+  require('fzf-lua').live_grep()
+end, { desc = 'FZF Live Grep' })
+
 vim.keymap.set('n', '<leader>bd', function()
   Snacks.bufdelete()
 end, { desc = 'Delete buffer', noremap = true })
