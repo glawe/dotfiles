@@ -8,7 +8,7 @@ return {
         week_header = {
           enable = true,
         },
-        project = { enable = true, limit = 8, icon = '  Recent projects', label = '', action = 'Telescope find_files cwd=' },
+        project = { enable = true, limit = 8, icon = '  Recent projects', label = '', action = 'FzfLua files cwd=' },
         --header = {}, --your header
         --footer = {}, --your footer
       },

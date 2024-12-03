@@ -51,17 +51,29 @@ vim.keymap.set('n', '<leader>do', ':DapStepOver<CR>', { desc = 'Step Over', nore
 vim.keymap.set('n', '<leader>dO', ':DapStepOut<CR>', { desc = 'Step Out', noremap = true })
 vim.keymap.set('n', '<leader>dT', ':DapTerminate<CR>', { desc = 'Terminate', noremap = true })
 
-vim.keymap.set('n', '<leader>-f', function()
+vim.keymap.set('n', '<leader>ff', function()
   require('fzf-lua').files()
-end, { desc = 'FZF files' })
+end, { desc = 'Files' })
 
-vim.keymap.set('n', '<leader>-b', function()
+vim.keymap.set('n', '<leader>fo', function()
   require('fzf-lua').buffers()
-end, { desc = 'FZF Open buffers' })
+end, { desc = 'Open buffers' })
 
-vim.keymap.set('n', '<leader>-g', function()
+vim.keymap.set('n', '<leader>fg', function()
   require('fzf-lua').live_grep()
-end, { desc = 'FZF Live Grep' })
+end, { desc = 'Live Grep' })
+
+vim.keymap.set('n', '<leader>fd', function()
+  require('fzf-lua').diagnostics_workspace()
+end, { desc = 'Diagnostics' })
+
+vim.keymap.set('n', '<leader>fw', function()
+  require('fzf-lua').grep_cword()
+end, { desc = 'Grep current word' })
+
+vim.keymap.set('n', '<leader>f/', function()
+  require('fzf-lua').grep_curbuf()
+end, { desc = 'Grep current buffer' })
 
 vim.keymap.set('n', '<leader>bd', function()
   Snacks.bufdelete()
