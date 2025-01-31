@@ -9,7 +9,7 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 -- NOTE: This won't work in all terminal emulators/tmux/etc. Try your own mapping
 -- or just use <C-\><C-n> to exit terminal mode
 --
--- local fileType = vim.api.nvim_buf_get_option(0, 'filetype')
+-- local fileType = vim.api.nvim_buf_get_option(2, 'filetype')
 -- function GetDartOptions()
 --   --if fileType == 'dart' then
 --   return { '<leader>f', group = 'Flutter', icon = '' }
@@ -18,10 +18,10 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
-vim.keymap.set('n', '<A-left>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
-vim.keymap.set('n', '<A-right>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
-vim.keymap.set('n', '<A-down>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
-vim.keymap.set('n', '<A-up>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
+vim.keymap.set('n', '<C-left>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
+vim.keymap.set('n', '<C-right>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
+vim.keymap.set('n', '<C-down>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
+vim.keymap.set('n', '<C-up>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
 vim.keymap.set('n', '<leader>e', ':Neotree toggle float<CR>', { noremap = true })
 
@@ -57,29 +57,71 @@ vim.keymap.set('n', '<leader>do', ':DapStepOver<CR>', { desc = 'Step Over', nore
 vim.keymap.set('n', '<leader>dO', ':DapStepOut<CR>', { desc = 'Step Out', noremap = true })
 vim.keymap.set('n', '<leader>dT', ':DapTerminate<CR>', { desc = 'Terminate', noremap = true })
 
+-- vim.keymap.set('n', '<leader>ff', function()
+--   require('fzf-lua').files()
+-- end, { desc = 'Files' })
+--
+-- vim.keymap.set('n', '<leader>fo', function()
+--   require('fzf-lua').buffers()
+-- end, { desc = 'Open buffers' })
+--
+-- vim.keymap.set('n', '<leader>fg', function()
+--   require('fzf-lua').live_grep()
+-- end, { desc = 'Live Grep' })
+--
+-- vim.keymap.set('n', '<leader>fd', function()
+--   require('fzf-lua').diagnostics_workspace()
+-- end, { desc = 'Diagnostics' })
+--
+-- vim.keymap.set('n', '<leader>fw', function()
+--   require('fzf-lua').grep_cword()
+-- end, { desc = 'Grep current word' })
+--
+-- vim.keymap.set('n', '<leader>f/', function()
+--   require('fzf-lua').grep_curbuf()
+-- end, { desc = 'Grep current buffer' })
+--
+--
+--
 vim.keymap.set('n', '<leader>ff', function()
-  require('fzf-lua').files()
-end, { desc = 'Files' })
+  Snacks.picker.files()
+end, { desc = 'Find Files' })
 
 vim.keymap.set('n', '<leader>fo', function()
-  require('fzf-lua').buffers()
-end, { desc = 'Open buffers' })
-
+  Snacks.picker.buffers()
+end, { desc = 'Open Buffer' })
 vim.keymap.set('n', '<leader>fg', function()
-  require('fzf-lua').live_grep()
-end, { desc = 'Live Grep' })
-
-vim.keymap.set('n', '<leader>fd', function()
-  require('fzf-lua').diagnostics_workspace()
-end, { desc = 'Diagnostics' })
-
-vim.keymap.set('n', '<leader>fw', function()
-  require('fzf-lua').grep_cword()
-end, { desc = 'Grep current word' })
+  Snacks.picker.git_files()
+end, { desc = 'Find Git Files' })
+vim.keymap.set('n', '<leader>ff', function()
+  Snacks.picker.recent()
+end, { desc = 'Recent' })
+vim.keymap.set('n', '<leader>gc', function()
+  Snacks.picker.git_log()
+end, { desc = 'Git Log' })
+vim.keymap.set('n', '<leader>gs', function()
+  Snacks.picker.git_status()
+end, { desc = 'Git Status' })
+vim.keymap.set('n', '<leader>fg', function()
+  Snacks.picker.grep()
+end, { desc = 'Grep' })
+vim.keymap.set('n', '<leader>fG', function()
+  Snacks.picker.grep_buffers()
+end, { desc = 'Grep Buffers' })
 
 vim.keymap.set('n', '<leader>f/', function()
-  require('fzf-lua').grep_curbuf()
-end, { desc = 'Grep current buffer' })
+  Snacks.picker.lines()
+end, { desc = 'Buffer Lines' })
+-- vim.keymap.set('n', '<leader>f', function() end, { desc = '' })
+-- vim.keymap.set('n', '<leader>f', function() end, { desc = '' })
+-- vim.keymap.set('n', '<leader>f', function() end, { desc = '' })
+-- vim.keymap.set('n', '<leader>f', function() end, { desc = '' })
+-- vim.keymap.set('n', '<leader>f', function() end, { desc = '' })
+-- vim.keymap.set('n', '<leader>f', function() end, { desc = '' })
+-- vim.keymap.set('n', '<leader>f', function() end, { desc = '' })
+-- vim.keymap.set('n', '<leader>f', function() end, { desc = '' })
+-- vim.keymap.set('n', '<leader>f', function() end, { desc = '' })
+-- vim.keymap.set('n', '<leader>f', function() end, { desc = '' })
 
 vim.keymap.set('n', '<leader>bd', function()
   Snacks.bufdelete()
@@ -122,5 +164,5 @@ vim.keymap.set('n', '<RightMouse>', function()
   vim.cmd.exec('"normal! \\<RightMouse>"')
 
   local options = vim.bo.ft == 'NvimTree' and 'nvimtree' or 'default'
-  require('menu').open(options, { mouse = true })
+  -- require('menu').open(options, { mouse = true })
 end, {})

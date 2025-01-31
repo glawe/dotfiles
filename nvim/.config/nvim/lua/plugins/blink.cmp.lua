@@ -35,16 +35,31 @@ return {
     -- default list of enabled providers defined so that you can extend it
     -- elsewhere in your config, without redefining it, via `opts_extend`
     sources = {
-      completion = {
-        enabled_providers = { 'lsp', 'path', 'snippets', 'buffer' },
-      },
+      default = { 'lsp', 'path', 'snippets', 'buffer' },
     },
-
+    signature = { enabled = true },
     completion = {
+      -- 'prefix' will fuzzy match on the text before the cursor
+      -- 'full' will fuzzy match on the text before *and* after the cursor
+      -- example: 'foo_|_bar' will match 'foo_' for 'prefix' and 'foo__bar' for 'full'
+      keyword = { range = 'full' },
+
+      -- Disable auto brackets
+      -- NOTE: some LSPs may add auto brackets themselves anyway
+      accept = { auto_brackets = { enabled = false } },
+
+      documentation = { auto_show = false, auto_show_delay_ms = 500 },
+
+      -- Display a preview of the selected item on the current line
+      ghost_text = { enabled = true },
+
       menu = {
         draw = {
-          treesitter = true,
-          columns = { { 'label', 'label_description', gap = 1 }, { 'kind_icon', 'kind', gap = 1 } },
+          -- treesitter = true,
+          columns = {
+            { 'label', 'label_description', gap = 1 },
+            { 'kind_icon', 'kind', gap = 1 },
+          },
         },
       },
     },

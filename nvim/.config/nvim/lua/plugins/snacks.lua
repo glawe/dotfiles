@@ -23,5 +23,8 @@ return {
         { section = 'startup' },
       },
     },
+    picker = {
+      enabled = true,
+    },
   },
 }
