@@ -26,5 +26,11 @@ return {
     picker = {
       enabled = true,
     },
+    explorer = {
+      enabled = true,
+    },
+    image = {
+      enabled = true,
+    },
   },
 }

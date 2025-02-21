@@ -23,7 +23,7 @@ vim.keymap.set('n', '<C-right>', '<C-w><C-l>', { desc = 'Move focus to the right
 vim.keymap.set('n', '<C-down>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-up>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
-vim.keymap.set('n', '<leader>e', ':Neotree toggle float<CR>', { noremap = true })
+-- vim.keymap.set('n', '<leader>e', ':Neotree toggle float<CR>', { noremap = true })
 
 vim.keymap.set('n', '<leader>wv', ':vsplit<CR>', { desc = 'Vertical split', noremap = true })
 vim.keymap.set('n', '<leader>wh', ':split<CR>', { desc = 'Horizontal split', noremap = true })
@@ -84,18 +84,17 @@ vim.keymap.set('n', '<leader>dT', ':DapTerminate<CR>', { desc = 'Terminate', nor
 --
 --
 vim.keymap.set('n', '<leader>ff', function()
-  Snacks.picker.files()
+  Snacks.picker.smart()
 end, { desc = 'Find Files' })
-
 vim.keymap.set('n', '<leader>fo', function()
   Snacks.picker.buffers()
 end, { desc = 'Open Buffer' })
 vim.keymap.set('n', '<leader>fg', function()
   Snacks.picker.git_files()
 end, { desc = 'Find Git Files' })
-vim.keymap.set('n', '<leader>ff', function()
-  Snacks.picker.recent()
-end, { desc = 'Recent' })
+-- vim.keymap.set('n', '<leader>ff', function()
+--   Snacks.picker.recent()
+-- end, { desc = 'Recent' })
 vim.keymap.set('n', '<leader>gc', function()
   Snacks.picker.git_log()
 end, { desc = 'Git Log' })
@@ -112,6 +111,10 @@ end, { desc = 'Grep Buffers' })
 vim.keymap.set('n', '<leader>f/', function()
   Snacks.picker.lines()
 end, { desc = 'Buffer Lines' })
+
+vim.keymap.set('n', '<leader>e', function()
+  Snacks.explorer()
+end, { desc = 'Explorer' })
 -- vim.keymap.set('n', '<leader>f', function() end, { desc = '' })
 -- vim.keymap.set('n', '<leader>f', function() end, { desc = '' })
 -- vim.keymap.set('n', '<leader>f', function() end, { desc = '' })
